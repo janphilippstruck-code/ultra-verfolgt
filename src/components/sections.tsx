@@ -91,10 +91,11 @@ export function Hero() {
 export function Konzept() {
   return (
     <section id="konzept" className="relative overflow-hidden py-16 sm:py-24 lg:py-32">
-      <RoutePath
-        variant="konzept"
-        className="absolute inset-y-0 left-0 z-0 h-full w-10 sm:left-4 sm:w-16 lg:left-[7%] lg:w-40"
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"
       />
+
       <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6">
         <Reveal>
           <p className="eyebrow">01 — Ausgangslage</p>
@@ -324,10 +325,6 @@ export function Outro() {
       className="relative overflow-hidden border-t border-border/50 py-20 sm:py-28 lg:py-36"
     >
       <div aria-hidden="true" className="topo absolute inset-0 opacity-70" />
-      <RoutePath
-        variant="outro"
-        className="absolute inset-x-0 top-0 z-0 h-full w-full"
-      />
       <div
         aria-hidden="true"
         className="absolute inset-0 bg-[radial-gradient(70%_60%_at_50%_50%,transparent_0%,var(--background)_100%)]"

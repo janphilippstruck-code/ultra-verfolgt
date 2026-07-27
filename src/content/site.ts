@@ -134,6 +134,6 @@ export const CONTACT = {
   city: "59077 Hamm",
   country: "Deutschland",
   phone: "0178 3350810",
-  phoneHref: "tel:+4917833508 10".replace(/\s/g, ""),
+  phoneHref: "tel:+491783350810",
   email: "janphilippstruck@gmx.de",
 };

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Logo } from "@/components/Logo";
 import { MapPin, RoutePath } from "@/components/RoutePath";
 import { Reveal } from "@/components/Reveal";
-import { FACTS, HERO, KONZEPT, OUTRO, TIMELINE } from "@/content/site";
+import { FEATURES, FEATURES_SECTION, HERO, KONZEPT, OUTRO, TIMELINE } from "@/content/site";
 
 function ScrollHint() {
   const [hidden, setHidden] = useState(false);

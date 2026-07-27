@@ -4,7 +4,7 @@
  * Rein visuell: pointer-events-none + aria-hidden.
  */
 
-type Variant = "hero" | "konzept" | "timeline" | "eckdaten" | "outro";
+type Variant = "hero" | "konzept" | "timeline" | "outro";
 
 type Segment = {
   viewBox: string;

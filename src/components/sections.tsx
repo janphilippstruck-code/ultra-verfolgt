@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { Logo } from "@/components/Logo";
 import { MapPin, RoutePath } from "@/components/RoutePath";
 import { Reveal } from "@/components/Reveal";
-import { FEATURES, FEATURES_SECTION, HERO, KONZEPT, OUTRO, TIMELINE } from "@/content/site";
+import { FEATURES_SECTION, HERO, KONZEPT, OUTRO, TIMELINE } from "@/content/site";
+
 
 function ScrollHint() {
   const [hidden, setHidden] = useState(false);
@@ -42,16 +43,20 @@ export function Hero() {
       id="hero"
       className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-4 pb-16 pt-24 sm:px-6 sm:pb-20 sm:pt-28"
     >
-      <div aria-hidden="true" className="topo absolute inset-0" />
-      <div aria-hidden="true" className="grid-lines absolute inset-0 opacity-60" />
-      <RoutePath
-        variant="hero"
-        className="absolute inset-x-0 bottom-0 top-auto z-0 h-[42%] w-full md:top-1/2 md:h-[60%] md:-translate-y-1/2"
-      />
+      <div aria-hidden="true" className="topo absolute inset-0 opacity-50 sm:opacity-100" />
+      <div aria-hidden="true" className="grid-lines absolute inset-0 opacity-30 sm:opacity-60" />
       <div
         aria-hidden="true"
         className="absolute inset-0 bg-[radial-gradient(80%_60%_at_50%_50%,transparent_0%,var(--background)_100%)]"
       />
+      {/* Ein einzelner, dezenter Standortpunkt */}
+      <div aria-hidden="true" className="absolute bottom-[18%] right-[12%] hidden sm:block">
+        <span className="relative flex h-1.5 w-1.5">
+          <span className="absolute -inset-3 rounded-full border border-primary/25" />
+          <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+        </span>
+      </div>
+
 
       <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-col items-center text-center">
         <h1 className="sr-only">Ultra Verfolgt – Gejagt bis ins Ziel</h1>

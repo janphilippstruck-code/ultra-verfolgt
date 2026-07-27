@@ -24,15 +24,16 @@ export function SiteHeader({ onHome = true }: { onHome?: boolean }) {
           : "border-b border-transparent bg-transparent"
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
+      <div className="mx-auto flex min-h-[4.5rem] max-w-6xl items-center justify-between gap-4 px-4 py-2 sm:px-6 lg:min-h-[6rem]">
         <Link
           to="/"
-          className="flex items-center rounded-sm py-2"
+          className="flex shrink-0 items-center rounded-sm py-1"
           aria-label="Ultra Verfolgt – Startseite"
           onClick={() => setOpen(false)}
         >
-          <Logo className="h-9 w-auto sm:h-10" />
+          <Logo style={{ width: "clamp(150px, 18vw, 260px)" }} />
         </Link>
+
 
         <nav aria-label="Hauptnavigation" className="hidden items-center gap-8 md:flex">
           {NAV_LINKS.map((l) => (

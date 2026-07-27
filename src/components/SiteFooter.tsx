@@ -5,15 +5,15 @@ import { SITE } from "@/content/site";
 export function SiteFooter() {
   return (
     <footer className="border-t border-border/60 bg-background">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 sm:px-6 md:flex-row md:items-center md:justify-between">
-        <div className="flex flex-col gap-3">
-          <Logo className="h-9 w-auto" />
-          <p className="font-display text-base uppercase tracking-[0.16em] text-muted-foreground">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-5 px-4 py-10 text-center sm:px-6 md:flex-row md:items-center md:justify-between md:gap-6 md:py-12 md:text-left">
+        <div className="flex flex-col items-center gap-3 md:items-start">
+          <Logo style={{ width: "clamp(190px, 26vw, 300px)" }} />
+          <p className="font-display text-sm uppercase tracking-[0.16em] text-muted-foreground sm:text-base">
             {SITE.fullName}
           </p>
         </div>
         <nav aria-label="Rechtliche Hinweise">
-          <ul className="flex flex-wrap items-center gap-6">
+          <ul className="flex flex-wrap items-center justify-center gap-6">
             <li>
               <Link
                 to="/impressum"

@@ -238,7 +238,7 @@ function ThreeLines() {
     <svg
       aria-hidden="true"
       viewBox="0 0 160 60"
-      className="h-10 w-full max-w-[180px]"
+      className="h-12 w-full max-w-[300px]"
       fill="none"
       preserveAspectRatio="none"
     >

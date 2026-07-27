@@ -149,18 +149,13 @@ export function Timeline() {
               as="li"
               key={s.date}
               delay={i * 90}
-              className={`relative pl-12 lg:flex-1 lg:pl-0 ${i % 2 === 1 ? "lg:pt-10" : ""}`}
+              className="relative pl-12 lg:flex-1 lg:pl-0"
             >
               <span className="absolute left-0 top-0 lg:relative lg:block">
                 <StationMarker marker={s.marker} />
               </span>
-              {s.marker !== "upcoming" && i % 2 === 1 && (
-                <span
-                  aria-hidden="true"
-                  className="absolute left-[13px] hidden lg:block"
-                />
-              )}
-              <div className="lg:mt-6 lg:pr-6">
+              <div className={`lg:pr-6 ${i % 2 === 1 ? "lg:mt-16" : "lg:mt-6"}`}>
+
                 <p
                   className={`font-display text-xl font-semibold uppercase tracking-[0.12em] ${
                     s.marker === "upcoming" ? "text-muted-foreground" : "text-primary"

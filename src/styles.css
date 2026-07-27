@@ -110,7 +110,7 @@
 @utility topo {
   background-image: radial-gradient(
       120% 90% at 50% 0%,
-      color-mix(in oklab, var(--color-primary) 7%, transparent) 0%,
+      color-mix(in oklab, white 4%, transparent) 0%,
       transparent 60%
     ),
     repeating-radial-gradient(

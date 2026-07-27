@@ -242,8 +242,10 @@ export function Eckdaten() {
                   </span>
                 )}
                 <span
-                  className={`mt-3 block font-display font-semibold uppercase tracking-[0.14em] text-muted-foreground ${
-                    f.value ? "text-xl" : "text-3xl leading-tight text-foreground sm:text-4xl"
+                  className={`mt-3 block font-display font-semibold uppercase tracking-[0.14em] ${
+                    f.value
+                      ? "text-xl text-muted-foreground"
+                      : "text-3xl leading-tight text-foreground sm:text-4xl"
                   }`}
                 >
                   {f.label}

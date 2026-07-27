@@ -41,14 +41,15 @@ export function Reveal({
   }, []);
 
   return (
-    // @ts-expect-error dynamic tag
-    <Tag
-      ref={ref}
+  const Component = Tag as "div";
+  return (
+    <Component
+      ref={ref as React.RefObject<HTMLDivElement>}
       data-visible={visible}
       className={`reveal ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
-    </Tag>
+    </Component>
   );
 }

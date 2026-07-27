@@ -40,7 +40,6 @@ export function Reveal({
     return () => io.disconnect();
   }, []);
 
-  return (
   const Component = Tag as "div";
   return (
     <Component

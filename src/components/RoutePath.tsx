@@ -56,7 +56,7 @@ const SEGMENTS: Record<Variant, { desktop: Segment; mobile: Segment }> = {
   timeline: {
     desktop: {
       viewBox: "0 0 1200 120",
-      d: "M 0 74 C 140 30, 220 96, 380 60 S 620 20, 780 66 S 1020 96, 1200 44",
+      d: "M 0 34 C 150 22, 230 44, 380 32 S 620 20, 780 34 S 1020 44, 1200 28",
       len: 1400,
     },
     mobile: {

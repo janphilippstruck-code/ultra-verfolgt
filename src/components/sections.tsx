@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Logo } from "@/components/Logo";
 import { MapPin, RoutePath } from "@/components/RoutePath";
 import { Reveal } from "@/components/Reveal";
-import { FACTS, HERO, KONZEPT, OUTRO, TIMELINE } from "@/content/site";
+import { FEATURES, FEATURES_SECTION, HERO, KONZEPT, OUTRO, TIMELINE } from "@/content/site";
 
 function ScrollHint() {
   const [hidden, setHidden] = useState(false);
@@ -227,93 +227,90 @@ export function Timeline() {
   );
 }
 
-function FactIcon({ icon }: { icon: string }) {
-  const c = "h-5 w-5 text-primary sm:h-6 sm:w-6";
-  const p = { fill: "none", stroke: "currentColor", strokeWidth: 1.5, "aria-hidden": true } as const;
-  if (icon === "teams")
-    return (
-      <svg viewBox="0 0 24 24" className={c} {...p}>
-        <circle cx="8" cy="8" r="3" />
-        <circle cx="16.5" cy="9.5" r="2.5" />
-        <path d="M3 20c0-3 2.2-5 5-5s5 2 5 5M14 20c0-2.4 1.4-4 3.5-4S21 17.6 21 20" />
-      </svg>
-    );
-  if (icon === "signal")
-    return (
-      <svg viewBox="0 0 24 24" className={c} {...p}>
-        <circle cx="12" cy="12" r="2" />
-        <path d="M8.5 15.5a5 5 0 0 1 0-7M15.5 8.5a5 5 0 0 1 0 7M5.5 18.5a9 9 0 0 1 0-13M18.5 5.5a9 9 0 0 1 0 13" />
-      </svg>
-    );
-  if (icon === "clock")
-    return (
-      <svg viewBox="0 0 24 24" className={c} {...p}>
-        <circle cx="12" cy="12" r="9" />
-        <path d="M12 7v5.2l3.2 2" />
-      </svg>
-    );
-  return (
-    <svg viewBox="0 0 24 24" className={c} {...p}>
-      <path d="M4 19c3 0 3-6 7-6s4-8 9-8" />
-      <circle cx="4" cy="19" r="1.6" />
-      <circle cx="20" cy="5" r="1.6" />
-    </svg>
-  );
-}
-
-export function Eckdaten() {
+export function JagdFeatures() {
   return (
     <section
       id="eckdaten"
-      className="relative overflow-hidden border-t border-border/50 py-16 sm:py-24 lg:py-28"
+      className="relative overflow-hidden border-t border-border/50 py-14 sm:py-20 lg:py-24"
     >
-      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="relative z-10 mx-auto max-w-[1140px] px-4 sm:px-6">
         <Reveal>
-          <p className="eyebrow">03 — Eckdaten</p>
-          <h2 className="mt-3 font-display text-3xl font-bold sm:text-5xl">DIE JAGD IN ZAHLEN</h2>
-          <p className="mt-3 text-sm text-muted-foreground sm:text-base">
-            Vier Eckdaten. Ein gemeinsames Ziel.
+          <p className="eyebrow">03 — Spielprinzip</p>
+          <h2 className="mt-3 font-display text-3xl font-bold sm:text-5xl">
+            {FEATURES_SECTION.heading}
+          </h2>
+          <p className="mt-2 text-sm text-muted-foreground sm:text-base">
+            {FEATURES_SECTION.sub}
           </p>
         </Reveal>
 
-        <div className="relative mt-8 sm:mt-12">
-          <RoutePath
-            variant="eckdaten"
-            className="absolute inset-0 z-0 h-full w-full opacity-70"
+        {/* Mobil: kompakte Zeilen an einer schmalen Routenlinie */}
+        <div className="relative mt-8 sm:hidden">
+          <span
+            aria-hidden="true"
+            className="absolute bottom-4 left-[5px] top-4 w-px bg-primary/50"
           />
-          <dl className="relative z-10 grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-0">
-            {FACTS.map((f, i) => {
-              const words = f.label.split(" ");
-              const big = f.value || words[0];
-              const small = f.value ? f.label : words.slice(1).join(" ");
-              return (
-                <Reveal
-                  key={f.label}
-                  delay={i * 70}
-                  className="border border-border/60 bg-surface/60 p-5 sm:p-6 lg:border-y-0 lg:border-r-0 lg:bg-transparent lg:px-8 lg:py-8 lg:first:border-l-0"
-                >
-                  <span className="flex items-center gap-2">
-                    <FactIcon icon={f.icon} />
-                    <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-primary" />
+          <ul className="relative">
+            {FEATURES.map((f, i) => (
+              <Reveal
+                as="li"
+                key={f.num}
+                delay={i * 70}
+                className={`flex gap-4 py-6 pl-6 ${
+                  i < FEATURES.length - 1 ? "border-b border-border/50" : ""
+                }`}
+              >
+                <span className="relative -ml-6 w-6 shrink-0 pt-[3px]">
+                  <span
+                    aria-hidden="true"
+                    className="absolute left-[2px] top-[9px] h-[7px] w-[7px] rounded-full bg-primary"
+                  />
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="font-display text-sm font-semibold tracking-[0.2em] text-primary">
+                    {f.num}
                   </span>
-                  <dt className="sr-only">{f.label}</dt>
-                  <dd className="mt-4">
-                    <span className="block font-display text-5xl font-bold leading-none text-foreground sm:text-6xl lg:text-7xl">
-                      {big}
-                    </span>
-                    <span className="mt-2 block font-display text-base font-semibold uppercase leading-tight tracking-[0.14em] text-muted-foreground sm:text-lg">
-                      {small}
-                    </span>
-                  </dd>
-                </Reveal>
-              );
-            })}
-          </dl>
+                  <h3 className="mt-1 font-display text-2xl font-bold uppercase leading-tight">
+                    {f.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{f.text}</p>
+                </span>
+              </Reveal>
+            ))}
+          </ul>
+        </div>
+
+        {/* Desktop / Tablet: 2 × 2 mit feinen Trennlinien */}
+        <div className="mt-12 hidden border-t border-border/50 sm:grid sm:grid-cols-2">
+          {FEATURES.map((f, i) => (
+            <Reveal
+              key={f.num}
+              delay={i * 70}
+              className={`relative border-b border-border/50 px-6 py-9 lg:px-10 lg:py-11 ${
+                i % 2 === 0 ? "sm:border-r sm:border-border/50" : ""
+              }`}
+            >
+              <span
+                aria-hidden="true"
+                className="absolute -left-[3px] top-[38px] hidden h-[7px] w-[7px] rounded-full bg-primary sm:block"
+              />
+              <span className="font-display text-sm font-semibold tracking-[0.24em] text-primary">
+                {f.num}
+              </span>
+              <h3 className="mt-2 font-display text-3xl font-bold uppercase leading-tight lg:text-4xl">
+                {f.title}
+              </h3>
+              <p className="mt-4 max-w-[42ch] text-base leading-relaxed text-muted-foreground">
+                {f.text}
+              </p>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>
   );
 }
+
 
 export function Outro() {
   return (

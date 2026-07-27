@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { Eckdaten, Hero, Konzept, Outro, Timeline } from "@/components/sections";
+import { Hero, JagdFeatures, Konzept, Outro, Timeline } from "@/components/sections";
 import { SITE } from "@/content/site";
 
 export const Route = createFileRoute("/")({
@@ -26,7 +26,7 @@ function Index() {
         <Hero />
         <Konzept />
         <Timeline />
-        <Eckdaten />
+        <JagdFeatures />
         <Outro />
       </main>
       <SiteFooter />

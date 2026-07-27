@@ -1,19 +1,52 @@
+import { useEffect, useState } from "react";
 import { Logo } from "@/components/Logo";
 import { MapPin, RoutePath } from "@/components/RoutePath";
 import { Reveal } from "@/components/Reveal";
 import { FACTS, HERO, KONZEPT, OUTRO, TIMELINE } from "@/content/site";
 
+function ScrollHint() {
+  const [hidden, setHidden] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setHidden(window.scrollY > 80);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <div
+      className={`absolute bottom-5 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-1.5 transition-opacity duration-500 min-[380px]:flex ${
+        hidden ? "opacity-0" : "opacity-100"
+      }`}
+    >
+      <span className="sr-only">Zum nächsten Abschnitt scrollen</span>
+      <span aria-hidden="true" className="block h-8 w-px bg-gradient-to-b from-transparent to-primary" />
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        className="h-4 w-4 text-primary"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      >
+        <path d="M6 9l6 6 6-6" />
+      </svg>
+    </div>
+  );
+}
+
 export function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-4 pb-20 pt-24 sm:px-6"
+      className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-4 pb-16 pt-24 sm:px-6 sm:pb-20 sm:pt-28"
     >
       <div aria-hidden="true" className="topo absolute inset-0" />
       <div aria-hidden="true" className="grid-lines absolute inset-0 opacity-60" />
       <RoutePath
         variant="hero"
-        className="pointer-events-none absolute inset-x-0 top-1/2 h-[60%] w-full -translate-y-1/2 opacity-40"
+        className="absolute inset-x-0 bottom-0 top-auto z-0 h-[42%] w-full md:top-1/2 md:h-[60%] md:-translate-y-1/2"
       />
       <div
         aria-hidden="true"
@@ -22,55 +55,54 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-col items-center text-center">
         <h1 className="sr-only">Ultra Verfolgt – Gejagt bis ins Ziel</h1>
-        <Logo className="w-full max-w-[19rem] sm:max-w-md lg:max-w-xl" />
+        <Logo
+          className="mx-auto"
+          style={{ width: "min(90%, 900px)", maxWidth: "650px" }}
+        />
 
-        <p className="eyebrow mt-6 text-[0.68rem] sm:text-xs">{HERO.kicker}</p>
+        <p className="eyebrow mt-8 text-[0.68rem] sm:text-xs">{HERO.kicker}</p>
 
-        <p className="mt-6 font-display text-[2.6rem] font-bold uppercase leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl">
+        <p className="mt-5 font-display text-[2.4rem] font-bold uppercase leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl">
           {HERO.headline}
         </p>
 
-        <p className="mx-auto mt-6 max-w-xl text-balance text-sm leading-relaxed text-muted-foreground sm:text-base">
+        <p className="mx-auto mt-5 max-w-xl text-balance text-sm leading-relaxed text-muted-foreground sm:text-base">
           {HERO.lead}
         </p>
 
         <a
           href={HERO.ctaHref}
-          className="mt-10 inline-flex min-h-[48px] items-center justify-center rounded-sm border border-primary bg-transparent px-7 font-display text-lg font-semibold uppercase tracking-[0.14em] text-foreground transition-colors duration-300 hover:bg-primary hover:text-primary-foreground"
+          className="mt-8 inline-flex min-h-[48px] items-center justify-center rounded-sm border border-primary bg-transparent px-7 font-display text-lg font-semibold uppercase tracking-[0.14em] text-foreground transition-colors duration-300 hover:bg-primary hover:text-primary-foreground sm:mt-10"
         >
           {HERO.cta}
         </a>
       </div>
 
-      <div
-        aria-hidden="true"
-        className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2"
-      >
-        <span className="eyebrow text-[0.6rem]">Scrollen</span>
-        <span className="block h-10 w-px bg-gradient-to-b from-primary to-transparent" />
-      </div>
+      <ScrollHint />
     </section>
   );
 }
 
 export function Konzept() {
   return (
-    <section id="konzept" className="relative overflow-hidden py-24 sm:py-32">
+    <section id="konzept" className="relative overflow-hidden py-16 sm:py-24 lg:py-32">
       <RoutePath
-        variant="section"
-        className="pointer-events-none absolute left-2 top-0 h-full w-24 opacity-30 sm:left-8 lg:left-[8%] lg:w-40"
+        variant="konzept"
+        className="absolute inset-y-0 left-0 z-0 h-full w-10 sm:left-4 sm:w-16 lg:left-[7%] lg:w-40"
       />
-      <div className="relative mx-auto max-w-3xl px-4 sm:px-6">
+      <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6">
         <Reveal>
           <p className="eyebrow">01 — Ausgangslage</p>
-          <h2 className="mt-4 font-display text-5xl font-bold sm:text-7xl">{KONZEPT.heading}</h2>
+          <h2 className="mt-3 font-display text-4xl font-bold sm:text-6xl lg:text-7xl">
+            {KONZEPT.heading}
+          </h2>
         </Reveal>
 
-        <div className="mt-14 flex flex-col gap-10">
+        <div className="mt-10 flex flex-col gap-7 sm:mt-14 sm:gap-10">
           {KONZEPT.blocks.map((b, i) =>
             b.emphasis ? (
               <Reveal key={i}>
-                <p className="relative border-l-2 border-primary py-2 pl-5 font-display text-3xl font-bold uppercase leading-tight text-foreground sm:text-5xl">
+                <p className="relative border-l-2 border-primary py-2 pl-5 font-display text-2xl font-bold uppercase leading-tight text-foreground sm:text-4xl lg:text-5xl">
                   {b.text}
                 </p>
               </Reveal>
@@ -112,29 +144,37 @@ function StationMarker({ marker }: { marker: "current" | "upcoming" | "finish" }
 
 export function Timeline() {
   return (
-    <section id="der-weg" className="relative border-t border-border/50 py-24 sm:py-32">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+    <section
+      id="der-weg"
+      className="relative overflow-hidden border-t border-border/50 py-16 sm:py-24 lg:py-32"
+    >
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal>
           <p className="eyebrow">02 — Vorbereitung</p>
-          <h2 className="mt-4 max-w-3xl font-display text-4xl font-bold sm:text-6xl">
+          <h2 className="mt-3 max-w-3xl font-display text-3xl font-bold sm:text-5xl lg:text-6xl">
             {TIMELINE.heading}
           </h2>
-          <p className="mt-5 max-w-xl text-base text-muted-foreground sm:text-lg">
+          <p className="mt-4 max-w-xl text-base text-muted-foreground sm:text-lg">
             {TIMELINE.intro}
           </p>
         </Reveal>
 
-        <ol className="relative mt-16 flex flex-col gap-12 lg:mt-24 lg:flex-row lg:gap-8">
-          {/* Vertikale Linie (mobil) */}
+        <ol className="relative mt-12 flex flex-col gap-10 sm:gap-12 lg:mt-24 lg:flex-row lg:gap-8">
+          {/* Route als Verbindung – Desktop */}
+          <RoutePath
+            variant="timeline"
+            className="absolute inset-x-0 -top-8 z-0 hidden h-32 w-full lg:block"
+          />
+          {/* Vertikale Route – mobil */}
           <span
             aria-hidden="true"
-            className="absolute left-[13px] top-2 bottom-2 w-px bg-border lg:hidden"
+            className="absolute bottom-2 left-[13px] top-2 w-px bg-border lg:hidden"
           />
           <span
             aria-hidden="true"
-            className="absolute left-[13px] top-2 h-[26%] w-px bg-primary lg:hidden"
+            className="absolute left-[13px] top-2 h-[24%] w-px bg-primary lg:hidden"
           />
-          {/* Horizontale Linie (Desktop) */}
+          {/* Fortschritt Desktop */}
           <span
             aria-hidden="true"
             className="absolute left-0 right-0 top-[14px] hidden h-px bg-border lg:block"
@@ -149,13 +189,12 @@ export function Timeline() {
               as="li"
               key={s.date}
               delay={i * 90}
-              className="relative pl-12 lg:flex-1 lg:pl-0"
+              className="relative z-10 pl-12 lg:flex-1 lg:pl-0"
             >
               <span className="absolute left-0 top-0 lg:relative lg:block">
                 <StationMarker marker={s.marker} />
               </span>
               <div className={`lg:pr-6 ${i % 2 === 1 ? "lg:mt-16" : "lg:mt-6"}`}>
-
                 <p
                   className={`font-display text-xl font-semibold uppercase tracking-[0.12em] ${
                     s.marker === "upcoming" ? "text-muted-foreground" : "text-primary"
@@ -171,7 +210,10 @@ export function Timeline() {
                 <h3 className="mt-3 font-display text-2xl font-bold sm:text-3xl">{s.title}</h3>
                 <div className="mt-3 flex max-w-[46ch] flex-col gap-2">
                   {s.paragraphs.map((p, j) => (
-                    <p key={j} className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+                    <p
+                      key={j}
+                      className="text-sm leading-relaxed text-muted-foreground sm:text-base"
+                    >
                       {p}
                     </p>
                   ))}
@@ -186,7 +228,7 @@ export function Timeline() {
 }
 
 function FactIcon({ icon }: { icon: string }) {
-  const c = "h-6 w-6 text-primary";
+  const c = "h-5 w-5 text-primary sm:h-6 sm:w-6";
   const p = { fill: "none", stroke: "currentColor", strokeWidth: 1.5, "aria-hidden": true } as const;
   if (icon === "teams")
     return (
@@ -221,39 +263,53 @@ function FactIcon({ icon }: { icon: string }) {
 
 export function Eckdaten() {
   return (
-    <section id="eckdaten" className="border-t border-border/50 py-24 sm:py-32">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+    <section
+      id="eckdaten"
+      className="relative overflow-hidden border-t border-border/50 py-16 sm:py-24 lg:py-28"
+    >
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal>
           <p className="eyebrow">03 — Eckdaten</p>
+          <h2 className="mt-3 font-display text-3xl font-bold sm:text-5xl">DIE JAGD IN ZAHLEN</h2>
+          <p className="mt-3 text-sm text-muted-foreground sm:text-base">
+            Vier Eckdaten. Ein gemeinsames Ziel.
+          </p>
         </Reveal>
-        <dl className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-          {FACTS.map((f, i) => (
-            <Reveal
-              key={f.label}
-              delay={i * 80}
-              className="border-t border-border/60 py-10 sm:py-14 lg:border-l lg:border-t-0 lg:px-8 lg:first:border-l-0 lg:first:pl-0"
-            >
-              <FactIcon icon={f.icon} />
-              <dt className="sr-only">{f.label}</dt>
-              <dd className="mt-6">
-                {f.value && (
-                  <span className="block font-display text-7xl font-bold leading-none text-foreground sm:text-8xl">
-                    {f.value}
-                  </span>
-                )}
-                <span
-                  className={`mt-3 block font-display font-semibold uppercase tracking-[0.14em] ${
-                    f.value
-                      ? "text-xl text-muted-foreground"
-                      : "text-3xl leading-tight text-foreground sm:text-4xl"
-                  }`}
+
+        <div className="relative mt-8 sm:mt-12">
+          <RoutePath
+            variant="eckdaten"
+            className="absolute inset-0 z-0 h-full w-full opacity-70"
+          />
+          <dl className="relative z-10 grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-0">
+            {FACTS.map((f, i) => {
+              const words = f.label.split(" ");
+              const big = f.value || words[0];
+              const small = f.value ? f.label : words.slice(1).join(" ");
+              return (
+                <Reveal
+                  key={f.label}
+                  delay={i * 70}
+                  className="border border-border/60 bg-surface/60 p-5 sm:p-6 lg:border-y-0 lg:border-r-0 lg:bg-transparent lg:px-8 lg:py-8 lg:first:border-l-0"
                 >
-                  {f.label}
-                </span>
-              </dd>
-            </Reveal>
-          ))}
-        </dl>
+                  <span className="flex items-center gap-2">
+                    <FactIcon icon={f.icon} />
+                    <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-primary" />
+                  </span>
+                  <dt className="sr-only">{f.label}</dt>
+                  <dd className="mt-4">
+                    <span className="block font-display text-5xl font-bold leading-none text-foreground sm:text-6xl lg:text-7xl">
+                      {big}
+                    </span>
+                    <span className="mt-2 block font-display text-base font-semibold uppercase leading-tight tracking-[0.14em] text-muted-foreground sm:text-lg">
+                      {small}
+                    </span>
+                  </dd>
+                </Reveal>
+              );
+            })}
+          </dl>
+        </div>
       </div>
     </section>
   );
@@ -263,12 +319,12 @@ export function Outro() {
   return (
     <section
       id="start"
-      className="relative overflow-hidden border-t border-border/50 py-28 sm:py-40"
+      className="relative overflow-hidden border-t border-border/50 py-20 sm:py-28 lg:py-36"
     >
       <div aria-hidden="true" className="topo absolute inset-0 opacity-70" />
       <RoutePath
         variant="outro"
-        className="pointer-events-none absolute inset-x-0 top-1/2 h-[70%] w-full -translate-y-1/2 opacity-35"
+        className="absolute inset-x-0 top-0 z-0 h-full w-full"
       />
       <div
         aria-hidden="true"
@@ -277,11 +333,13 @@ export function Outro() {
       <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center px-4 text-center sm:px-6">
         <MapPin className="h-8 w-8 text-primary" />
         <Reveal>
-          <h2 className="mt-6 font-display text-4xl font-bold sm:text-6xl">{OUTRO.heading}</h2>
-          <p className="mt-6 font-display text-[3.2rem] font-bold leading-none text-primary sm:text-8xl">
+          <h2 className="mt-5 font-display text-3xl font-bold sm:text-5xl lg:text-6xl">
+            {OUTRO.heading}
+          </h2>
+          <p className="mt-5 font-display text-[2.8rem] font-bold leading-none text-primary sm:text-7xl lg:text-8xl">
             {OUTRO.date}
           </p>
-          <p className="mt-8 text-base text-muted-foreground">{OUTRO.note}</p>
+          <p className="mt-6 text-base text-muted-foreground">{OUTRO.note}</p>
         </Reveal>
       </div>
     </section>

@@ -35,16 +35,17 @@ export function SiteHeader({ onHome = true }: { onHome?: boolean }) {
         </Link>
 
 
-        <nav aria-label="Hauptnavigation" className="hidden items-center gap-8 md:flex">
+        <nav aria-label="Hauptnavigation" className="hidden items-center gap-5 md:flex lg:gap-8">
           {NAV_LINKS.map((l) => (
             <a
               key={l.href}
               href={href(l.href)}
-              className="font-display text-lg font-medium uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:text-foreground"
+              className="whitespace-nowrap font-display text-base font-medium uppercase tracking-[0.12em] text-muted-foreground transition-colors hover:text-foreground lg:text-lg lg:tracking-[0.14em]"
             >
               {l.label}
             </a>
           ))}
+
           <a
             href={href(NAV_HIGHLIGHT.href)}
             className="inline-flex h-11 items-center rounded-sm border border-primary px-4 font-display text-lg font-semibold tracking-[0.1em] text-primary transition-colors hover:bg-primary hover:text-primary-foreground"

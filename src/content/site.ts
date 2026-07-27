@@ -113,14 +113,36 @@ export const TIMELINE: {
   ],
 };
 
-export type Fact = { value: string; label: string; icon: "teams" | "signal" | "clock" | "route" };
+export type Feature = { num: string; title: string; text: string };
 
-export const FACTS: Fact[] = [
-  { value: "3", label: "ZWEIER-TEAMS", icon: "teams" },
-  { value: "1", label: "SUCHER-TEAM", icon: "signal" },
-  { value: "8", label: "STUNDEN", icon: "clock" },
-  { value: "", label: "FREIE ROUTENWAHL", icon: "route" },
+export const FEATURES_SECTION = {
+  heading: "WAS DIE JAGD AUSMACHT",
+  sub: "Tempo allein reicht nicht.",
+};
+
+export const FEATURES: Feature[] = [
+  {
+    num: "01",
+    title: "DREI TEAMS",
+    text: "Drei Zweierteams starten getrennt und suchen ihren eigenen Weg zum selben Ziel.",
+  },
+  {
+    num: "02",
+    title: "EIN SUCHER-TEAM",
+    text: "Mobil, taktisch und immer auf der Suche nach dem nächsten Hinweis.",
+  },
+  {
+    num: "03",
+    title: "ACHT STUNDEN",
+    text: "Genug Zeit, um das Ziel zu erreichen. Zu wenig Zeit, um sich sicher zu fühlen.",
+  },
+  {
+    num: "04",
+    title: "KEIN SICHERER WEG",
+    text: "Kurz, schnell oder unauffällig: Jede Route verändert das Risiko.",
+  },
 ];
+
 
 export const OUTRO = {
   heading: "DIE ERSTE JAGD BEGINNT",

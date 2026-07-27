@@ -113,35 +113,30 @@ export const TIMELINE: {
   ],
 };
 
-export type Feature = { num: string; title: string; text: string };
-
 export const FEATURES_SECTION = {
-  heading: "WAS DIE JAGD AUSMACHT",
-  sub: "Tempo allein reicht nicht.",
-};
-
-export const FEATURES: Feature[] = [
-  {
-    num: "01",
-    title: "DREI TEAMS",
+  eyebrow: "DAS SPIELPRINZIP",
+  heading: "TEMPO ALLEIN REICHT NICHT.",
+  teams: {
+    figure: "3",
+    label: "TEAMS",
     text: "Drei Zweierteams starten getrennt und suchen ihren eigenen Weg zum selben Ziel.",
   },
-  {
-    num: "02",
-    title: "EIN SUCHER-TEAM",
+  sucher: {
+    figure: "1",
+    label: "SUCHER-TEAM",
     text: "Mobil, taktisch und immer auf der Suche nach dem nächsten Hinweis.",
   },
-  {
-    num: "03",
-    title: "ACHT STUNDEN",
+  stunden: {
+    figure: "8:00:00",
+    label: "ACHT STUNDEN",
     text: "Genug Zeit, um das Ziel zu erreichen. Zu wenig Zeit, um sich sicher zu fühlen.",
   },
-  {
-    num: "04",
-    title: "KEIN SICHERER WEG",
+  weg: {
+    label: "KEIN SICHERER WEG",
     text: "Kurz, schnell oder unauffällig: Jede Route verändert das Risiko.",
   },
-];
+};
+
 
 
 export const OUTRO = {

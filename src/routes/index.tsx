@@ -26,7 +26,7 @@ function Index() {
         <Hero />
         <Konzept />
         <Timeline />
-        <Eckdaten />
+        <JagdFeatures />
         <Outro />
       </main>
       <SiteFooter />

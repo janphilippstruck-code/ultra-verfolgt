@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LegalPage } from "@/components/LegalPage";
-import { CONTACT } from "@/content/site";
+import { CONTACT, SITE_URL } from "@/content/site";
 
 export const Route = createFileRoute("/datenschutz")({
   head: () => ({
@@ -18,6 +18,7 @@ export const Route = createFileRoute("/datenschutz")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/datenschutz` }],
   }),
   component: Datenschutz,
 });
@@ -40,8 +41,6 @@ function Datenschutz() {
           {CONTACT.country}
         </p>
         <p className="mt-3">
-          Telefon: <a href={CONTACT.phoneHref}>{CONTACT.phone}</a>
-          <br />
           E-Mail: <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
         </p>
       </section>
@@ -239,7 +238,7 @@ function Datenschutz() {
       </section>
 
       <section>
-        <h2>9. Kontaktaufnahme per E-Mail oder Telefon</h2>
+        <h2>9. Kontaktaufnahme per E-Mail</h2>
         <p className="mt-3">
           Besucher können über die im Impressum und in dieser Datenschutzerklärung angegebenen
           Kontaktdaten Kontakt aufnehmen.
@@ -250,7 +249,6 @@ function Datenschutz() {
         <ul className="mt-3 flex flex-col gap-1">
           <li>Name</li>
           <li>E-Mail-Adresse</li>
-          <li>Telefonnummer</li>
           <li>Inhalt der Nachricht</li>
           <li>Zeitpunkt der Kontaktaufnahme</li>
           <li>weitere freiwillig übermittelte Angaben</li>

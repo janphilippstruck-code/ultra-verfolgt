@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LegalPage } from "@/components/LegalPage";
-import { CONTACT } from "@/content/site";
+import { CONTACT, SITE_URL } from "@/content/site";
 
 export const Route = createFileRoute("/impressum")({
   head: () => ({
@@ -18,6 +18,7 @@ export const Route = createFileRoute("/impressum")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/impressum` }],
   }),
   component: Impressum,
 });
@@ -40,8 +41,6 @@ function Impressum() {
       <section>
         <h2>Kontakt</h2>
         <p className="mt-3">
-          Telefon: <a href={CONTACT.phoneHref}>{CONTACT.phone}</a>
-          <br />
           E-Mail: <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
         </p>
       </section>

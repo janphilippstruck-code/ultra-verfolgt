@@ -8,6 +8,15 @@ export const EVENT_DATE_LONG = "20. SEPTEMBER 2026";
 export const EVENT_DATE_SHORT = "20.09.2026";
 export const EVENT_REGION = "SAUERLAND";
 
+export const SITE_URL = "https://ultraverfolgt.xn--ballonlufer-r8a.de";
+export const OG_IMAGE = `${SITE_URL}/social/ultra-verfolgt-og.jpg`;
+
+export const BALLONLAEUFER = {
+  label: "Ein Projekt von Ballonläufer",
+  href: "https://xn--ballonlufer-r8a.de/",
+  logoAlt: "Ballonläufer",
+};
+
 export const SITE = {
   name: "Ultra Verfolgt",
   claim: "Gejagt bis ins Ziel",
@@ -17,7 +26,7 @@ export const SITE = {
     "Drei Laufteams, ein Sucher-Team, acht Stunden und ein gemeinsames Ziel. Ultra Verfolgt ist ein taktisches Lauf- und Verfolgungsspiel im Sauerland.",
   ogTitle: "Ultra Verfolgt – Gejagt bis ins Ziel",
   ogDescription:
-    "Drei Teams. Acht Stunden. Ein Ziel. Die erste Jagd beginnt am 20. September 2026.",
+    "Drei Teams. Ein Sucherteam. Acht Stunden. Die erste Jagd beginnt am 20. September 2026.",
   logoAlt: "Ultra Verfolgt – Gejagt bis ins Ziel",
 };
 
@@ -63,7 +72,7 @@ export type TimelineStation = {
   date: string;
   title: string;
   paragraphs: string[];
-  marker: "current" | "upcoming" | "finish";
+  marker: "past" | "current" | "upcoming" | "finish";
   badge?: string;
 };
 
@@ -81,8 +90,7 @@ export const TIMELINE: {
       paragraphs: [
         "Das Spielkonzept steht. Laufteams und Sucher werden zusammengestellt, erste Rollen verteilt und der Ablauf der Jagd weiterentwickelt.",
       ],
-      marker: "current",
-      badge: "WIR SIND HIER",
+      marker: "past",
     },
     {
       date: "AUGUST 2026",
@@ -90,7 +98,8 @@ export const TIMELINE: {
       paragraphs: [
         "Startpunkte, Zielgebiet und mögliche Routen werden überprüft. Gleichzeitig werden Standort-Pings, Checkpoints, Joker und die Spielmechanik unter realistischen Bedingungen getestet.",
       ],
-      marker: "upcoming",
+      marker: "current",
+      badge: "AKTUELL",
     },
     {
       date: "SEPTEMBER 2026",
@@ -150,7 +159,5 @@ export const CONTACT = {
   street: "Brüggenkampstraße 10",
   city: "59077 Hamm",
   country: "Deutschland",
-  phone: "0178 3350810",
-  phoneHref: "tel:+491783350810",
   email: "janphilippstruck@gmx.de",
 };

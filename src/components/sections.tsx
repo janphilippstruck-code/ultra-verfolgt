@@ -126,7 +126,16 @@ export function Konzept() {
   );
 }
 
-function StationMarker({ marker }: { marker: "current" | "upcoming" | "finish" }) {
+function StationMarker({ marker }: { marker: "past" | "current" | "upcoming" | "finish" }) {
+  if (marker === "past") {
+    return (
+      <span className="flex h-7 w-7 items-center justify-center rounded-full border-2 border-primary/40 bg-background text-primary/70">
+        <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="M5 13l4 4L19 7" />
+        </svg>
+      </span>
+    );
+  }
   if (marker === "finish") {
     return (
       <span className="flex h-7 w-7 items-center justify-center rounded-full border-2 border-primary bg-background text-primary">
@@ -178,7 +187,7 @@ export function Timeline() {
           />
           <span
             aria-hidden="true"
-            className="absolute left-[13px] top-2 h-[24%] w-px bg-primary lg:hidden"
+            className="absolute left-[13px] top-2 h-[50%] w-px bg-primary lg:hidden"
           />
           {/* Fortschritt Desktop */}
           <span
@@ -187,7 +196,7 @@ export function Timeline() {
           />
           <span
             aria-hidden="true"
-            className="absolute left-0 top-[14px] hidden h-px w-[12.5%] bg-primary lg:block"
+            className="absolute left-0 top-[14px] hidden h-px w-[37.5%] bg-primary lg:block"
           />
 
           {TIMELINE.stations.map((s, i) => (
@@ -203,7 +212,11 @@ export function Timeline() {
               <div className={`lg:pr-6 ${i % 2 === 1 ? "lg:mt-16" : "lg:mt-6"}`}>
                 <p
                   className={`font-display text-xl font-semibold uppercase tracking-[0.12em] ${
-                    s.marker === "upcoming" ? "text-muted-foreground" : "text-primary"
+                    s.marker === "upcoming"
+                      ? "text-muted-foreground"
+                      : s.marker === "past"
+                        ? "text-primary/60"
+                        : "text-primary"
                   }`}
                 >
                   {s.date}

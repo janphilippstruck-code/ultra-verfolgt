@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Logo } from "./Logo";
-import { SITE } from "@/content/site";
+import { BALLONLAEUFER, SITE } from "@/content/site";
+import ballonLogo from "@/assets/ballonlaeufer-logo.png.asset.json";
 
 export function SiteFooter() {
   return (
@@ -12,7 +13,25 @@ export function SiteFooter() {
             {SITE.fullName}
           </p>
         </div>
-        <nav aria-label="Rechtliche Hinweise">
+        <div className="flex flex-col items-center gap-4 md:items-end">
+          <a
+            href={BALLONLAEUFER.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex min-h-[44px] items-center gap-3 rounded-sm border border-border/60 px-3 py-2 text-sm text-muted-foreground transition-colors hover:border-primary hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          >
+            <img
+              src={ballonLogo.url}
+              alt={BALLONLAEUFER.logoAlt}
+              className="h-7 w-auto object-contain"
+              loading="lazy"
+              decoding="async"
+            />
+            <span className="underline-offset-4 group-hover:underline">
+              {BALLONLAEUFER.label} ↗
+            </span>
+          </a>
+          <nav aria-label="Rechtliche Hinweise">
           <ul className="flex flex-wrap items-center justify-center gap-6">
             <li>
               <Link
@@ -31,7 +50,8 @@ export function SiteFooter() {
               </Link>
             </li>
           </ul>
-        </nav>
+          </nav>
+        </div>
       </div>
     </footer>
   );

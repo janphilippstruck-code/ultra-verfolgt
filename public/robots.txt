@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://ultraverfolgt.xn--ballonlufer-r8a.de/sitemap.xml

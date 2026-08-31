@@ -2,6 +2,8 @@
 
 This project was built with [Lovable](https://lovable.dev).
 
+Live: https://ultraverfolgt.xn--ballonlufer-r8a.de/ (sichtbar: https://ultraverfolgt.ballonläufer.de/)
+
 ## Build with Lovable
 
 Open your project in the [Lovable editor](https://lovable.dev) and keep building.

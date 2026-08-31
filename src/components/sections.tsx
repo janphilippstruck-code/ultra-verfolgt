@@ -187,7 +187,7 @@ export function Timeline() {
           />
           <span
             aria-hidden="true"
-            className="absolute left-[13px] top-2 h-[24%] w-px bg-primary lg:hidden"
+            className="absolute left-[13px] top-2 h-[50%] w-px bg-primary lg:hidden"
           />
           {/* Fortschritt Desktop */}
           <span
@@ -196,7 +196,7 @@ export function Timeline() {
           />
           <span
             aria-hidden="true"
-            className="absolute left-0 top-[14px] hidden h-px w-[12.5%] bg-primary lg:block"
+            className="absolute left-0 top-[14px] hidden h-px w-[37.5%] bg-primary lg:block"
           />
 
           {TIMELINE.stations.map((s, i) => (

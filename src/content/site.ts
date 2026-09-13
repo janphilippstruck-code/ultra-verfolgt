@@ -158,16 +158,16 @@ export const TIMELINE: {
       paragraphs: [
         "Startpunkte, Zielgebiet und mögliche Routen werden überprüft. Gleichzeitig werden Standort-Pings, Checkpoints, Joker und die Spielmechanik unter realistischen Bedingungen getestet.",
       ],
-      marker: "current",
-      badge: "AKTUELL",
+      marker: "past",
     },
     {
       date: "SEPTEMBER 2026",
       title: "DIE TEAMS STEHEN BEREIT",
       paragraphs: [
-        "Die letzten Details werden festgelegt. Laufteams und Sucher erhalten ihre Briefings, die Rollen werden final verteilt und alles wird für den ersten Pilotlauf vorbereitet.",
+        "Die letzten Details werden festgelegt. Laufteams und Sucher erhalten ihre Briefings, die Technik wird vorbereitet und alles wird für den ersten Pilotlauf zusammengeführt.",
       ],
-      marker: "upcoming",
+      marker: "current",
+      badge: "WIR SIND HIER",
     },
     {
       date: EVENT_DATE_LONG,
@@ -175,7 +175,7 @@ export const TIMELINE: {
       paragraphs: [
         "Drei Laufteams machen sich auf den Weg.",
         "Das Sucher-Team nimmt die Verfolgung auf.",
-        "Acht Stunden später steht fest, wer das Ziel erreicht – und wer vorher gefunden wird.",
+        "Acht Stunden später steht fest, welche Teams ihr Ziel erreicht haben – und welche vorher gefunden wurden.",
       ],
       marker: "finish",
     },

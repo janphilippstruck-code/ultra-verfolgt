@@ -93,6 +93,8 @@ export function Hero() {
         >
           {HERO.cta}
         </a>
+
+        <Countdown className="mt-10 w-full sm:mt-14" />
       </div>
 
       <ScrollHint />

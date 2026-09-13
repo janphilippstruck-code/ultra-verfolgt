@@ -122,7 +122,9 @@ export const KONZEPT: { heading: string; blocks: KonzeptBlock[] } = {
     },
     { text: "DER KÜRZESTE WEG IST NICHT ZWANGSLÄUFIG DER SICHERSTE.", emphasis: true },
     { text: "Die Läufer gewinnen, wenn ein nicht gestelltes Team das Ziel erreicht." },
-    { text: "Das Sucher-Team gewinnt, wenn es alle Läufer-Teams rechtzeitig aufspürt." },
+    {
+      text: "Das Sucher-Team gewinnt vollständig, wenn es alle Läufer-Teams rechtzeitig aufspürt.",
+    },
   ],
 };
 

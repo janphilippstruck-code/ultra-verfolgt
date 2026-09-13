@@ -154,8 +154,7 @@ export function Season2Form() {
             className="mt-1 h-5 w-5 shrink-0 accent-[var(--color-primary)]"
           />
           <span>
-            {SEASON2.consent.replace(" Weitere Informationen finde ich in der Datenschutzerklärung.", " ")}
-            Weitere Informationen finde ich in der{" "}
+            {SEASON2.consent} {SEASON2.consentLink}{" "}
             <Link to="/datenschutz" className="text-primary underline underline-offset-4">
               Datenschutzerklärung
             </Link>

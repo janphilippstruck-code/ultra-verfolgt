@@ -81,7 +81,8 @@ export const SEASON2 = {
   ],
   cta: "UNVERBINDLICH INTERESSE ANMELDEN",
   consent:
-    "Ich bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Interessenbekundung für Ultra Verfolgt Season 2 gespeichert und zur Kontaktaufnahme verwendet werden. Weitere Informationen finde ich in der Datenschutzerklärung.",
+    "Ich bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Interessenbekundung für Ultra Verfolgt Season 2 gespeichert und zur Kontaktaufnahme verwendet werden.",
+  consentLink: "Weitere Informationen finde ich in der",
   submit: "INTERESSE SENDEN",
   disclaimer:
     "Die Interessenbekundung ist unverbindlich und stellt weder eine Anmeldung noch eine Startplatzzusage dar.",

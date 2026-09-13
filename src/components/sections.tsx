@@ -466,3 +466,141 @@ export function Outro() {
     </section>
   );
 }
+
+export function Experiment() {
+  return (
+    <section
+      id="season-1"
+      className="relative overflow-hidden border-t border-border/50 bg-[#0c0e12] py-16 sm:py-24 lg:py-32"
+    >
+      <div aria-hidden="true" className="grid-lines absolute inset-0 opacity-25" />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-[radial-gradient(80%_70%_at_50%_40%,transparent_0%,#0c0e12_100%)]"
+      />
+
+      {/* Dezente Filmframe-Ecken */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-4 hidden sm:block">
+        <span className="absolute left-0 top-0 h-8 w-8 border-l border-t border-border/70" />
+        <span className="absolute right-0 top-0 h-8 w-8 border-r border-t border-border/70" />
+        <span className="absolute bottom-0 left-0 h-8 w-8 border-b border-l border-border/70" />
+        <span className="absolute bottom-0 right-0 h-8 w-8 border-b border-r border-border/70" />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6">
+        <Reveal>
+          <p className="flex items-center gap-2 font-sans text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-primary">
+            <span aria-hidden="true" className="inline-block h-2 w-2 rounded-full bg-primary" />
+            REC
+            <span className="text-muted-foreground">· {EXPERIMENT.eyebrow}</span>
+          </p>
+          <h2 className="mt-4 font-display text-3xl font-bold sm:text-5xl lg:text-6xl">
+            {EXPERIMENT.heading}
+          </h2>
+        </Reveal>
+
+        <div className="mt-8 flex flex-col gap-6 sm:mt-12">
+          {EXPERIMENT.paragraphs.map((p) => (
+            <Reveal key={p}>
+              <p className="max-w-[58ch] text-base leading-relaxed text-muted-foreground sm:text-lg">
+                {p}
+              </p>
+            </Reveal>
+          ))}
+
+          <Reveal>
+            <ul className="flex flex-col gap-2 border-l-2 border-primary pl-5">
+              {EXPERIMENT.bullets.map((b) => (
+                <li key={b} className="font-display text-xl uppercase tracking-[0.04em] sm:text-2xl">
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+
+          <Reveal>
+            <div className="flex flex-col gap-1">
+              {EXPERIMENT.closing.map((c) => (
+                <p key={c} className="text-base leading-relaxed text-muted-foreground sm:text-lg">
+                  {c}
+                </p>
+              ))}
+            </div>
+          </Reveal>
+
+          <Reveal>
+            <p className="font-display text-2xl font-bold uppercase leading-tight text-primary sm:text-4xl">
+              {EXPERIMENT.final}
+            </p>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function Season2() {
+  return (
+    <section
+      id="season-2"
+      className="relative overflow-hidden border-t border-border/50 py-16 sm:py-24 lg:py-28"
+    >
+      <div className="relative z-10 mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16">
+        <div>
+          <Reveal>
+            <p className="eyebrow text-primary">{SEASON2.eyebrow}</p>
+            <h2 className="mt-3 font-display text-3xl font-bold sm:text-5xl lg:text-6xl">
+              {SEASON2.heading}
+            </h2>
+            <div className="mt-6 flex flex-col gap-4">
+              {SEASON2.paragraphs.map((p) => (
+                <p key={p} className="max-w-[52ch] text-base leading-relaxed text-muted-foreground sm:text-lg">
+                  {p}
+                </p>
+              ))}
+            </div>
+            <p className="mt-8 font-display text-xl uppercase tracking-[0.08em] text-primary sm:text-2xl">
+              {SEASON2.cta}
+            </p>
+          </Reveal>
+        </div>
+
+        <div id="season-2-form" className="scroll-mt-28">
+          <Season2Form />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function Intern() {
+  return (
+    <section
+      id="intern"
+      className="relative border-t border-border/50 py-14 sm:py-20"
+    >
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <Reveal>
+          <p className="eyebrow text-primary">{INTERN.eyebrow}</p>
+          <h2 className="mt-3 max-w-[22ch] font-display text-2xl font-bold sm:text-4xl">
+            {INTERN.heading}
+          </h2>
+          <p className="mt-4 max-w-[52ch] text-base leading-relaxed text-muted-foreground">
+            {INTERN.text}
+          </p>
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            {INTERN.links.map((l) => (
+              <Link
+                key={l.to}
+                to={l.to}
+                className="inline-flex min-h-[52px] items-center justify-center rounded-sm border border-primary px-6 font-display text-lg font-semibold uppercase tracking-[0.12em] text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+              >
+                {l.label}
+              </Link>
+            ))}
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}

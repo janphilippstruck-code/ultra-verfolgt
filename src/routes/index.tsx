@@ -42,7 +42,11 @@ function Index() {
         <Konzept />
         <Timeline />
         <JagdFeatures />
+        <Experiment />
+        <Season2 />
+        <Intern />
         <Outro />
+
       </main>
       <SiteFooter />
     </>

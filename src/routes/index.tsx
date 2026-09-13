@@ -1,7 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { Hero, JagdFeatures, Konzept, Outro, Timeline } from "@/components/sections";
+import {
+  Experiment,
+  Hero,
+  Intern,
+  JagdFeatures,
+  Konzept,
+  Outro,
+  Season2,
+  Timeline,
+} from "@/components/sections";
 import { OG_IMAGE, SITE, SITE_URL } from "@/content/site";
 
 export const Route = createFileRoute("/")({
@@ -33,7 +42,11 @@ function Index() {
         <Konzept />
         <Timeline />
         <JagdFeatures />
+        <Experiment />
+        <Season2 />
+        <Intern />
         <Outro />
+
       </main>
       <SiteFooter />
     </>

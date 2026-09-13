@@ -53,16 +53,15 @@ function Datenschutz() {
         <p className="mt-3">
           Es werden nur solche personenbezogenen Daten verarbeitet, die für die technische
           Bereitstellung, Sicherheit und Erreichbarkeit der Website erforderlich sind oder die
-          Besucher freiwillig im Rahmen einer Kontaktaufnahme per E-Mail übermitteln.
+          Besucher freiwillig im Rahmen einer Kontaktaufnahme per E-Mail oder über das Formular zur
+          Interessenbekundung für Season 2 übermitteln.
         </p>
         <p className="mt-3">
           Auf dieser Website werden derzeit insbesondere nicht eingesetzt:
         </p>
         <ul className="mt-3 flex flex-col gap-1">
           <li>Benutzerkonten</li>
-          <li>Anmeldeformulare</li>
           <li>Bewerbungsformulare</li>
-          <li>Kontaktformulare</li>
           <li>Newsletter</li>
           <li>Kommentarfunktionen</li>
           <li>Online-Shops</li>
@@ -273,7 +272,42 @@ function Datenschutz() {
       </section>
 
       <section>
-        <h2>10. Externe Links</h2>
+        <h2>10. Interessenbekundung für Season 2</h2>
+        <p className="mt-3">
+          Auf der Startseite kann über ein Formular unverbindlich Interesse an einer Teilnahme an
+          Season 2 bekundet werden. Dabei werden folgende Angaben verarbeitet:
+        </p>
+        <ul className="mt-3 flex flex-col gap-1">
+          <li>Name oder Spitzname</li>
+          <li>E-Mail-Adresse</li>
+          <li>gewünschte Rolle (Läufer, Sucher oder beides)</li>
+          <li>Angabe, ob bereits ein Team-Partner vorhanden ist</li>
+          <li>freiwillige Nachricht</li>
+          <li>Zeitpunkt der Übermittlung</li>
+        </ul>
+        <p className="mt-3">
+          Die Daten werden ausschließlich verwendet, um über die weitere Planung von Season 2 zu
+          informieren und die Interessenbekundung zu bearbeiten. Es erfolgt keine Werbung für fremde
+          Angebote und keine Weitergabe an Dritte zu Werbezwecken.
+        </p>
+        <p className="mt-3">
+          Rechtsgrundlage ist Artikel 6 Absatz 1 Buchstabe a DSGVO (Einwilligung). Die Einwilligung
+          kann jederzeit mit Wirkung für die Zukunft widerrufen werden, zum Beispiel per E-Mail an{" "}
+          <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>.
+        </p>
+        <p className="mt-3">
+          Die Daten werden gelöscht, sobald die Einwilligung widerrufen wird oder die Planung von
+          Season 2 abgeschlossen ist und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
+        </p>
+        <p className="mt-3">
+          Die übermittelten Angaben werden in einer Datenbank gespeichert, die über die Infrastruktur
+          von Lovable Cloud betrieben wird. Grundlage ist ein Vertrag zur Auftragsverarbeitung nach
+          Artikel 28 DSGVO.
+        </p>
+      </section>
+
+      <section>
+        <h2>11. Externe Links</h2>
         <p className="mt-3">
           Diese Website kann Links zu Internetseiten anderer Anbieter enthalten.
         </p>
@@ -286,7 +320,7 @@ function Datenschutz() {
       </section>
 
       <section>
-        <h2>11. Rechte betroffener Personen</h2>
+        <h2>12. Rechte betroffener Personen</h2>
         <p className="mt-3">
           Betroffene Personen haben im Rahmen der gesetzlichen Voraussetzungen insbesondere das
           Recht:
@@ -308,7 +342,7 @@ function Datenschutz() {
       </section>
 
       <section>
-        <h2>12. Beschwerderecht</h2>
+        <h2>13. Beschwerderecht</h2>
         <p className="mt-3">
           Betroffene Personen haben das Recht, sich bei einer Datenschutzaufsichtsbehörde zu
           beschweren.
@@ -329,7 +363,7 @@ function Datenschutz() {
       </section>
 
       <section>
-        <h2>13. Aktualisierung der Datenschutzerklärung</h2>
+        <h2>14. Aktualisierung der Datenschutzerklärung</h2>
         <p className="mt-3">
           Diese Datenschutzerklärung entspricht dem derzeit vorgesehenen technischen und inhaltlichen
           Umfang der Website.
@@ -339,7 +373,7 @@ function Datenschutz() {
           Funktionen ergänzt oder verändert werden:
         </p>
         <ul className="mt-3 flex flex-col gap-1">
-          <li>Kontakt- oder Bewerbungsformulare</li>
+          <li>Bewerbungsformulare</li>
           <li>Anmeldemöglichkeiten</li>
           <li>Teilnehmerprofile</li>
           <li>Newsletter</li>
@@ -352,7 +386,7 @@ function Datenschutz() {
           <li>Benutzerkonten</li>
           <li>Zahlungsfunktionen</li>
         </ul>
-        <p className="mt-3">Stand: Juli 2026</p>
+        <p className="mt-3">Stand: September 2026</p>
       </section>
     </LegalPage>
   );

@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /briefing/
 
 Sitemap: https://ultraverfolgt.xn--ballonlufer-r8a.de/sitemap.xml

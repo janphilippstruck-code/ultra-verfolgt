@@ -13,6 +13,8 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ImpressumRouteImport } from './routes/impressum'
 import { Route as DatenschutzRouteImport } from './routes/datenschutz'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BriefingSucherRouteImport } from './routes/briefing/sucher'
+import { Route as BriefingLaeuferRouteImport } from './routes/briefing/laeufer'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -34,18 +36,32 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BriefingSucherRoute = BriefingSucherRouteImport.update({
+  id: '/briefing/sucher',
+  path: '/briefing/sucher',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BriefingLaeuferRoute = BriefingLaeuferRouteImport.update({
+  id: '/briefing/laeufer',
+  path: '/briefing/laeufer',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/datenschutz': typeof DatenschutzRoute
   '/impressum': typeof ImpressumRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/briefing/laeufer': typeof BriefingLaeuferRoute
+  '/briefing/sucher': typeof BriefingSucherRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/datenschutz': typeof DatenschutzRoute
   '/impressum': typeof ImpressumRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/briefing/laeufer': typeof BriefingLaeuferRoute
+  '/briefing/sucher': typeof BriefingSucherRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +69,34 @@ export interface FileRoutesById {
   '/datenschutz': typeof DatenschutzRoute
   '/impressum': typeof ImpressumRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/briefing/laeufer': typeof BriefingLaeuferRoute
+  '/briefing/sucher': typeof BriefingSucherRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/datenschutz' | '/impressum' | '/sitemap.xml'
+  fullPaths:
+    | '/'
+    | '/datenschutz'
+    | '/impressum'
+    | '/sitemap.xml'
+    | '/briefing/laeufer'
+    | '/briefing/sucher'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/datenschutz' | '/impressum' | '/sitemap.xml'
-  id: '__root__' | '/' | '/datenschutz' | '/impressum' | '/sitemap.xml'
+  to:
+    | '/'
+    | '/datenschutz'
+    | '/impressum'
+    | '/sitemap.xml'
+    | '/briefing/laeufer'
+    | '/briefing/sucher'
+  id:
+    | '__root__'
+    | '/'
+    | '/datenschutz'
+    | '/impressum'
+    | '/sitemap.xml'
+    | '/briefing/laeufer'
+    | '/briefing/sucher'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,6 +104,8 @@ export interface RootRouteChildren {
   DatenschutzRoute: typeof DatenschutzRoute
   ImpressumRoute: typeof ImpressumRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  BriefingLaeuferRoute: typeof BriefingLaeuferRoute
+  BriefingSucherRoute: typeof BriefingSucherRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -99,6 +138,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/briefing/sucher': {
+      id: '/briefing/sucher'
+      path: '/briefing/sucher'
+      fullPath: '/briefing/sucher'
+      preLoaderRoute: typeof BriefingSucherRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/briefing/laeufer': {
+      id: '/briefing/laeufer'
+      path: '/briefing/laeufer'
+      fullPath: '/briefing/laeufer'
+      preLoaderRoute: typeof BriefingLaeuferRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -107,6 +160,8 @@ const rootRouteChildren: RootRouteChildren = {
   DatenschutzRoute: DatenschutzRoute,
   ImpressumRoute: ImpressumRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  BriefingLaeuferRoute: BriefingLaeuferRoute,
+  BriefingSucherRoute: BriefingSucherRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

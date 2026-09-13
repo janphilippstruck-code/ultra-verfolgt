@@ -8,6 +8,11 @@ export const EVENT_DATE_LONG = "20. SEPTEMBER 2026";
 export const EVENT_DATE_SHORT = "20.09.2026";
 export const EVENT_REGION = "SAUERLAND";
 
+/** 20.09.2026, 08:00 Uhr Europe/Berlin (UTC+2) */
+export const EVENT_START_UTC = Date.UTC(2026, 8, 20, 6, 0, 0);
+/** 20.09.2026, 16:00 Uhr Europe/Berlin (UTC+2) */
+export const EVENT_END_UTC = Date.UTC(2026, 8, 20, 14, 0, 0);
+
 export const SITE_URL = "https://ultraverfolgt.xn--ballonlufer-r8a.de";
 export const OG_IMAGE = `${SITE_URL}/social/ultra-verfolgt-og.jpg`;
 
@@ -26,14 +31,16 @@ export const SITE = {
     "Drei Laufteams, ein Sucher-Team, acht Stunden und ein gemeinsames Ziel. Ultra Verfolgt ist ein taktisches Lauf- und Verfolgungsspiel im Sauerland.",
   ogTitle: "Ultra Verfolgt – Gejagt bis ins Ziel",
   ogDescription:
-    "Drei Teams. Ein Sucherteam. Acht Stunden. Die erste Jagd beginnt am 20. September 2026.",
+    "Drei Teams. Acht Stunden. Ein Ziel. Die erste Jagd beginnt am 20. September 2026.",
   logoAlt: "Ultra Verfolgt – Gejagt bis ins Ziel",
 };
 
 export const NAV_LINKS = [
   { label: "Konzept", href: "#konzept" },
   { label: "Der Weg", href: "#der-weg" },
-  { label: "Eckdaten", href: "#eckdaten" },
+  { label: "Season 1", href: "#season-1" },
+  { label: "Season 2", href: "#season-2" },
+  { label: "Intern", href: "#intern" },
 ];
 
 export const NAV_HIGHLIGHT = { label: EVENT_DATE_SHORT, href: "#start" };
@@ -41,10 +48,61 @@ export const NAV_HIGHLIGHT = { label: EVENT_DATE_SHORT, href: "#start" };
 export const HERO = {
   kicker: `${EVENT_DATE_LONG} · ${EVENT_REGION}`,
   headline: "DREI TEAMS. ACHT STUNDEN. EIN ZIEL.",
-  lead: "Ein taktisches Laufspiel, bei dem der kürzeste Weg nicht immer der sicherste ist.",
+  lead: "Ein taktisches Lauf- und Verfolgungsspiel, bei dem der kürzeste Weg nicht immer der sicherste ist.",
   cta: "DIE JAGD ENTDECKEN",
   ctaHref: "#konzept",
 };
+
+export const COUNTDOWN = {
+  label: "DIE ERSTE JAGD BEGINNT IN",
+  running: "DIE JAGD LÄUFT.",
+  finished: "DIE ERSTE JAGD IST GESCHICHTE.",
+  units: { days: "TAGE", hours: "STUNDEN", minutes: "MINUTEN", seconds: "SEKUNDEN" },
+};
+
+export const EXPERIMENT = {
+  eyebrow: "SEASON 1 // DOKUMENTATION",
+  heading: "DAS EXPERIMENT WIRD FESTGEHALTEN.",
+  paragraphs: [
+    "Was passiert, wenn sechs Läufer ihren eigenen Weg wählen – und ein Team alles daransetzt, sie wiederzufinden?",
+    "Bei der ersten Ausgabe von Ultra Verfolgt sind die Kameras dabei.",
+  ],
+  bullets: ["Bei den Läufern.", "Bei den Suchern.", "Unterwegs.", "Und aus verschiedenen Perspektiven."],
+  closing: ["Keine zweite Chance.", "Keine nachgestellten Entscheidungen."],
+  final: "Acht Stunden Jagd – aus beiden Perspektiven.",
+};
+
+export const SEASON2 = {
+  eyebrow: "SEASON 2 // WINTER 2026",
+  heading: "DIE ERSTE JAGD IST ERST DER ANFANG.",
+  paragraphs: [
+    "Eine zweite Ausgabe von Ultra Verfolgt ist für November / Dezember 2026 geplant.",
+    "Du möchtest beim nächsten Mal selbst auf der Flucht sein – oder die Jagd aufnehmen?",
+  ],
+  cta: "UNVERBINDLICH INTERESSE ANMELDEN",
+  consent:
+    "Ich bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Interessenbekundung für Ultra Verfolgt Season 2 gespeichert und zur Kontaktaufnahme verwendet werden. Weitere Informationen finde ich in der Datenschutzerklärung.",
+  submit: "INTERESSE SENDEN",
+  disclaimer:
+    "Die Interessenbekundung ist unverbindlich und stellt weder eine Anmeldung noch eine Startplatzzusage dar.",
+  successHeading: "DU BIST AUF DEM RADAR.",
+  successText: [
+    "Deine Interessenbekundung ist eingegangen.",
+    "Dies ist noch keine Anmeldung oder Startplatzzusage.",
+    "Wir melden uns, sobald Season 2 konkreter wird.",
+  ],
+};
+
+export const INTERN = {
+  eyebrow: "INTERN // SEASON 1",
+  heading: "NUR FÜR DIE TEILNEHMER DER ERSTEN JAGD",
+  text: "Dieser Bereich ist ausschließlich für die Teilnehmer der ersten Jagd bestimmt.",
+  links: [
+    { label: "LÄUFER-BRIEFING", to: "/briefing/laeufer" as const },
+    { label: "SUCHER-BRIEFING", to: "/briefing/sucher" as const },
+  ],
+};
+
 
 export type KonzeptBlock = { text: string; emphasis?: boolean };
 

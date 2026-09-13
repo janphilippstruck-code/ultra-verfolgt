@@ -1,8 +1,20 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Logo } from "@/components/Logo";
 import { MapPin, RoutePath } from "@/components/RoutePath";
 import { Reveal } from "@/components/Reveal";
-import { FEATURES_SECTION, HERO, KONZEPT, OUTRO, TIMELINE } from "@/content/site";
+import { Countdown } from "@/components/Countdown";
+import { Season2Form } from "@/components/Season2Form";
+import {
+  EXPERIMENT,
+  FEATURES_SECTION,
+  HERO,
+  INTERN,
+  KONZEPT,
+  OUTRO,
+  SEASON2,
+  TIMELINE,
+} from "@/content/site";
 
 
 function ScrollHint() {
